@@ -27,7 +27,12 @@ Heroku Deployment Steps
 --> heroku create cosc625_group4
 --> heroku addons:create heroku-postgresql:hobby-dev --app cosc625-group4
 --> heroku config --app cosc625-group4
---> 
+## set repo remote for our heroku project 
+
+--> heroku git:remote -a cosc625-group4
+
+# push code to heroku project 
+--> git push heroku master
 
 
 
