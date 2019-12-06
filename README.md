@@ -22,5 +22,12 @@
 "pipenv install gunicorn" --> used to deploy to heroku 
 "snap install --classic heroku" --> used for heroku deployment 
 
+Heroku Deployment Steps 
+--> heroku login
+--> heroku create cosc625_group4
+--> heroku addons:create heroku-postgresql:hobby-dev --app cosc625-group4
+--> heroku config --app cosc625-group4
+--> 
+
 
 
