@@ -20,6 +20,7 @@
 "pip install psychopg2" --> fixed error for ORM
 "pipenv install flask-sqlalchemy --> used to map data objects
 "pipenv install gunicorn" --> used to deploy to heroku 
+"snap install --classic heroku" --> used for heroku deployment 
 
 
 
