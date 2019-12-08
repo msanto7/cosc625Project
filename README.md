@@ -1,10 +1,13 @@
-# COSC 625 - Python Application 
+# COSC 625 - Python Application
+
+## Live site 
+https://cosc625-group4.herokuapp.com/
 
 ## Group 4
 
 
 ## Project Description 
-
+ 
 
 ## Database 
 --> PostgreSQL
