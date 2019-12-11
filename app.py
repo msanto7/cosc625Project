@@ -85,24 +85,29 @@ def index():
 @app.route('/submit', methods=['POST'])
 def submit():
     if request.method == 'POST':
-        customer = request.form['customer']
-        dealer = request.form['dealer']
-        rating = request.form['rating']
-        comments = request.form['comments']
-        # print(customer, dealer, rating, comments)
-        if customer == '' or dealer == '':
+        email = request.form['email']
+        firstName = request.form['firstName']
+        lastName = request.form['lastName']
+        password = request.form['password']
+        if email == '' or password == '':
             return render_template('index.html', message='Please enter required fields.')
 
-        if db.session.query(Feedback).filter(Feedback.customer == customer).count() == 0:
-            data = Feedback(customer, dealer, rating, comments)
+        if db.session.query(User).filter(User.email == email).count() == 0:
+            data = User(email, firstName, lastName, password)
             db.session.add(data)
             db.session.commit()
 
             # send confirmation email 
-            send_mail(customer, dealer, rating, comments)
+            send_mail(email, firstName, lastName, password)
 
             return render_template('success.html')
-        return render_template('index.html', message='You have already submitted feedback.')
+        return render_template('index.html', message='User already created with this email.')
+
+# need a route for login after account creation 
+
+# need a route to the home page after authentication 
+
+# need a route to view cart items 
 
 
 if __name__ == '__main__':
